@@ -1,4 +1,13 @@
 // service worker demo
 'use strict';
 
-alert(1);
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', {scope:'/'})
+      .then((registration) => {
+        console.log('register', registration);
+      }).catch((err) => {
+        console.log('err', err);
+      });
+  });
+}
