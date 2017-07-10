@@ -2,7 +2,7 @@
 
 const mainCacheName = 'yuanxj1024-chache';
 
-this.addEventListener('install', (event) => {
+this.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.open(mainCacheName).then((cache) => {
       return cache.add([
